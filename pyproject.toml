@@ -4,15 +4,28 @@ build-backend = "maturin"
 
 [project]
 name = "chat-py-demo"
+description = "Demo of CHAT text and AST processing through Python"
+readme = "README.md"
+authors = [
+  {name = "Franklin Chen", email = "franklinchen@franklinchen.com"}
+]
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
+dependencies = [
+    "maturin",
+    "pydantic",
+]
 [project.optional-dependencies]
+dev = [
+    "datamodel-code-generator"
+]
 tests = [
     "pytest",
+    "mypy"
 ]
 dynamic = ["version"]
 

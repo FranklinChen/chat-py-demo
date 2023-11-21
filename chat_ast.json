@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Chat",
+  "description": "A CHAT transcript.",
+  "type": "object",
+  "required": [
+    "tops"
+  ],
+  "properties": {
+    "tops": {
+      "description": "All the top level lines.",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Top"
+      }
+    }
+  },
+  "definitions": {
+    "Top": {
+      "description": "Top-level line.",
+      "oneOf": [
+        {
+          "description": "@...",
+          "type": "object",
+          "required": [
+            "Header"
+          ],
+          "properties": {
+            "Header": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "...",
+          "type": "object",
+          "required": [
+            "MainTier"
+          ],
+          "properties": {
+            "MainTier": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "%...",
+          "type": "object",
+          "required": [
+            "DependentTier"
+          ],
+          "properties": {
+            "DependentTier": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "description": "An error!",
+          "type": "object",
+          "required": [
+            "UnrecognizedTier"
+          ],
+          "properties": {
+            "UnrecognizedTier": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

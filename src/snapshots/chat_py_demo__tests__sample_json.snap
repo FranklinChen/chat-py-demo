@@ -1,0 +1,7 @@
+---
+source: src/lib.rs
+expression: json_to_chat(json)
+---
+Ok(
+    "@Begin\n*CHI:word\n@com:comment\n@End\n",
+)
