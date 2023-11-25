@@ -8,7 +8,7 @@ from collections.abc import Sequence
 from pydantic import BaseModel, ConfigDict, RootModel
 
 
-class TopItem(BaseModel):
+class Top1(BaseModel):
     """
     @...
     """
@@ -19,7 +19,7 @@ class TopItem(BaseModel):
     Header: str
 
 
-class TopItem1(BaseModel):
+class Top2(BaseModel):
     """
     ...
     """
@@ -30,7 +30,7 @@ class TopItem1(BaseModel):
     MainTier: str
 
 
-class TopItem2(BaseModel):
+class Top3(BaseModel):
     """
     %...
     """
@@ -41,7 +41,7 @@ class TopItem2(BaseModel):
     DependentTier: str
 
 
-class TopItem3(BaseModel):
+class Top4(BaseModel):
     """
     An error!
     """
@@ -52,8 +52,8 @@ class TopItem3(BaseModel):
     UnrecognizedTier: str
 
 
-class Top(RootModel[TopItem | TopItem1 | TopItem2 | TopItem3]):
-    root: TopItem | TopItem1 | TopItem2 | TopItem3
+class Top(RootModel[Top1 | Top2 | Top3 | Top4]):
+    root: Top1 | Top2 | Top3 | Top4
     """
     Top-level line.
     """
