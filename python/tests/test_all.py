@@ -9,17 +9,17 @@ import pytest
 from chat_py_demo import json_to_chat
 
 # Module generated from JSON Schema for Pydantic.
-from chat_py_demo.chat_ast import Chat, Top, TopItem, TopItem1, TopItem2
+from chat_py_demo.chat_ast import Chat, Top, Top1, Top2, Top3
 
 
 # TODO
 def test_sample_chat() -> None:
     sample_chat = Chat(
         tops=[
-            Top(root=TopItem(Header="@Begin")),
-            Top(root=TopItem1(MainTier="*CHI:word")),
-            Top(root=TopItem2(DependentTier="%com:comment")),
-            Top(root=TopItem(Header="@End")),
+            Top(root=Top1(Header="@Begin")),
+            Top(root=Top2(MainTier="*CHI:word")),
+            Top(root=Top3(DependentTier="%com:comment")),
+            Top(root=Top1(Header="@End")),
         ]
     )
     sample_chat_json = sample_chat.model_dump_json()
