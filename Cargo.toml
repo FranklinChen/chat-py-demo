@@ -9,7 +9,7 @@ name = "chat_py_demo"
 crate-type = ["lib", "cdylib"]
 
 [dependencies]
-pyo3 = "0.20.2"
+pyo3 = "0.24.1"
 
 serde = { version = "*", features = ["derive"] }
 serde_with = "*"
